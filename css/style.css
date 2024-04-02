@@ -2,9 +2,11 @@
 
 @import url(./normalize.css);
 
-header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@import url(desktop.css);
+
+
+
+:root{
 
 }
+
