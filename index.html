@@ -8,8 +8,8 @@
   <meta name="description"
     content="Sitio para crear memes personalizados de forma sencilla y rápida, utilizando tus imágenes " />
   <meta name="author" content="Daniela Sánchez" />
-  <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="shortcut icon" href="./assets/img/reir.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Editor de memes</title>
 </head>
 
@@ -41,10 +41,10 @@
     <section class="container-main">
       <div class="container-image" id="containerImg">
         <p class="text-image" id="textoSupP">Texto superior</p>
-        <div class="meme-image" id="meme-image" aria-label="Imagen de meme"></div>
+        <div class="meme-image" id="memeImage" aria-label="Imagen de meme"></div>
         <p class="text-image" id="textoInfP">Texto inferior</p>
       </div>
-      <button class="buttom-download" aria-label="Descargar meme" id="botonDescarga">
+      <button class="botonDescarga" aria-label="Descargar meme" id="botonDescarga">
         <i class="fa-solid fa-download" aria-hidden="true"></i>&nbsp;
         Descargar meme
       </button>
@@ -55,7 +55,7 @@
     <!-- <button class="aside-button" id="aside-button" aria-label="cerrar panel lateral">
                 <i class="fas fa-times" aria-hidden="true"></i>
             </button> -->
-    <aside class="aside-image" id="asideImagen">
+    <aside class="asideImage" id="asideImagen">
       <h2>Imagen</h2>
       <div class="panel-editor">
         <!-- URL DE LA IMAGEN -->
@@ -68,11 +68,11 @@
           <h3>fondo</h3>
           <div class="panel-control-rows">
             <div class="panel-back-color panel-color-rows">
-              <input type="color" id="input-back-color" aria-label="Color de fondo de imagen" />
+              <input type="color" id="colorFondo" aria-label="Color de fondo de imagen" />
               <span id="blend-back-color" aria-hidden="true">#FFFFF</span>
             </div>
             <div class="panel-control-rows">
-              <select class="panel-control-input" id="select-back-color"
+              <select class="panel-control-input" id="selectColorFondo"
                 aria-label="Mezcla del color de fondo de la imagen">
                 <option value="ninguno" id="ninguno">Ninguno</option>
                 <option value="aclarar" id="aclarar">Aclarar</option>
@@ -132,14 +132,14 @@
 
       <!-- BOTÓN RESTABLECER FILTROS -->
 
-      <button id="botonRestablecerFiltros" class="aside-reset-button" aria-label="Reestablecer los filtros">
+      <button id="botonRestablecerFiltros" class="botonRestablecerFiltros" aria-label="Reestablecer los filtros">
         Reestablecer filtros
       </button>
     </aside>
 
     <!-- SECCION EDITOR TEXTO -->
 
-    <aside class="aside-tex" id="asideTexto">
+    <aside class="asideTexto" id="asideTexto">
       <h2>Texto</h2>
       <div class="aside-section">
         <!-- TEXTO SUPERIOR -->

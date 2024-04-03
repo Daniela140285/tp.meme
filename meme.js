@@ -1,13 +1,92 @@
-//capturo botones texto e imagen
+//declaración de variables de header
 
+//capturo botones texto, imagen
 const botonImagen = document.getElementById("botonImagen");
 const botonTexto = document.getElementById("botonTexto");
+//boton claro/oscuro
+const botonModo = document.getElementById("botonModo");
+const miHeader = document.getElementById("miHeader");
+const iconoModo = document.getElementById("iconoModo");
 
+//declaraciones aside- imagen
 const asideImagen = document.getElementById("asideImagen");
+
+let divImage = document.getElementById("memeImage");
+let colorFondo = document.getElementById("colorFondo");
+
+let selectColorFondo = document.getElementById("selectColorFondo");
+let ninguno = document.getElementById("ninguno");
+let aclarar = document.getElementById("aclarar");
+let oscurecer = document.getElementById("oscurecer");
+let diferencia = document.getElementById("diferencia");
+let luminosidad = document.getElementById("luminosidad");
+let multiplicar = document.getElementById("multiplicar");
+
+let brillo = document.getElementById("brillo");
+let opacidad = document.getElementById("opacidad");
+let contraste = document.getElementById("contraste");
+let desenfoque = document.getElementById("desenfoque");
+let grises = document.getElementById("grises");
+let sepia = document.getElementById("sepia");
+let hue = document.getElementById("hue");
+let saturado = document.getElementById("saturado");
+let negativo = document.getElementById("negativo");
+
+const botonRestablecerFiltros = document.getElementById("botonRestablecerFiltros");
+
+//declaraciones aside-texto
 const asideTexto = document.getElementById("asideTexto");
 
-//eventos de botones imagen
+const textoSup = document.getElementById("textoSup");
+const textoSupNo = document.getElementById("textoSupNo");
+const textoSupP = document.getElementById("textoSupP");
 
+const textoInf = document.getElementById("textoInf");
+const textoInfNo = document.getElementById("textoInfNo");
+const textoInfP = document.getElementById("textoInfP");
+
+const tipoFuente = document.getElementById("tipoFuente");
+const arial = document.getElementById("arial");
+const arialBlack = document.getElementById("arialBlack");
+const americanTypewriter = document.getElementById("americanTypewriter");
+const andaleMono = document.getElementById("andaleMono");
+const comicSansMs = document.getElementById("comicSansMs");
+const helvetica = document.getElementById("helvetica");
+const impact = document.getElementById("impact");
+const verdana = document.getElementById("verdana");
+const timesNewRoman = document.getElementById("timesNewRoman");
+
+const tamanoFuente = document.getElementById("tamanoFuente");
+
+const alinearIzq = document.getElementById("alineadoIzq");
+const alinearCentro = document.getElementById("alineadoCentro");
+const alinearDer = document.getElementById("alineadoDer");
+
+const colorFuente = document.getElementById("colorFuente");
+
+const colorFondoP = document.getElementById("colorFondoP");
+
+const fondoTransparente = document.getElementById("fondoTransparente");
+
+const botonSinContorno = document.getElementById("sinContorno");
+const botonContornoClaro = document.getElementById("contornoClaro");
+const botonContornoOscuro = document.getElementById("contornoOscuro");
+
+const espaciado = document.getElementById("espaciado");
+
+const interlineado = document.getElementById("interlineado");
+const ceroOcho = document.getElementById("ceroOcho");
+const uno = document.getElementById("uno");
+const unoDos = document.getElementById("unoDos");
+const unoCinco = document.getElementById("unoCinco");
+const dos = document.getElementById("dos");
+const dosCinco = document.getElementById("dosCinco");
+
+// descarga meme
+const botonDescarga = document.getElementById("botonDescarga");
+
+
+//evento boton imagen
 botonImagen.addEventListener("click", () => {
   asideImagen.style.display = "block";
   asideTexto.style.display = "none";
@@ -19,11 +98,7 @@ botonTexto.addEventListener("click", () => {
   asideImagen.style.display = "none";
 });
 
-//boton claro/oscuro
-const botonModo = document.getElementById("botonModo");
-const miHeader = document.getElementById("miHeader");
-const iconoModo = document.getElementById("iconoModo");
-
+// Evento boton Modo
 let modoClaroOscuro = "Modo Oscuro";
 botonModo.addEventListener("click", () => {
   if (modoClaroOscuro === "Modo Claro") {
@@ -45,33 +120,25 @@ botonModo.addEventListener("click", () => {
   }
 });
 
-//para traer la img
+//PANEL IMAGEN
+
+// traer la img con la URL
 document.getElementById("url").addEventListener("change", () => {
   cargarUrl();
 });
-
-let divImage = document.getElementById("meme-image");
 
 function cargarUrl() {
   let valueInputUrl = document.getElementById("url").value;
   divImage.style.backgroundImage = "url('" + valueInputUrl + "')";
 }
 
-//para cambiar fondo de color
-let colorFondo = document.getElementById("input-back-color");
+// cambiar fondo de color de la img
 
 colorFondo.addEventListener("change", () => {
   divImage.style.backgroundColor = colorFondo.value;
 });
 
 //mezclar color de fondo con imagen
-let selectColorFondo = document.getElementById("select-back-color");
-let ninguno = document.getElementById("ninguno");
-let aclarar = document.getElementById("aclarar");
-let oscurecer = document.getElementById("oscurecer");
-let diferencia = document.getElementById("diferencia");
-let luminosidad = document.getElementById("luminosidad");
-let multiplicar = document.getElementById("multiplicar");
 
 selectColorFondo.addEventListener("change", () => {
   mezclarImgFondo(selectColorFondo);
@@ -100,15 +167,6 @@ const mezclarImgFondo = (selectColorFondo) => {
 };
 
 //filtros de imagen
-let brillo = document.getElementById("brillo");
-let opacidad = document.getElementById("opacidad");
-let contraste = document.getElementById("contraste");
-let desenfoque = document.getElementById("desenfoque");
-let grises = document.getElementById("grises");
-let sepia = document.getElementById("sepia");
-let hue = document.getElementById("hue");
-let saturado = document.getElementById("saturado");
-let negativo = document.getElementById("negativo");
 
 brillo.addEventListener("change", filtrosImg);
 opacidad.addEventListener("change", filtrosImg);
@@ -123,7 +181,6 @@ negativo.addEventListener("change", filtrosImg);
 function filtrosImg() {
   let filtros = "";
   if (brillo.value !== "1") {
-    console.log(filtros);
     filtros += `brightness(${brillo.value})`;
   }
   if (opacidad.value !== "1") {
@@ -155,9 +212,6 @@ function filtrosImg() {
 }
 
 //botón restablecer filtros
-const botonRestablecerFiltros = document.getElementById(
-  "botonRestablecerFiltros"
-);
 botonRestablecerFiltros.addEventListener("click", () => {
   brillo.value = "1";
   opacidad.value = "1";
@@ -175,10 +229,6 @@ botonRestablecerFiltros.addEventListener("click", () => {
 //      PANEL DE TEXTO
 
 //texto superior
-const textoSup = document.getElementById("textoSup");
-const textoSupNo = document.getElementById("textoSupNo");
-const textoSupP = document.getElementById("textoSupP");
-
 textoSup.addEventListener("keyup", () => {
   textoSupP.textContent = textoSup.value;
 });
@@ -192,10 +242,6 @@ textoSupNo.addEventListener("click", () => {
 });
 
 //texto inferior
-const textoInf = document.getElementById("textoInf");
-const textoInfNo = document.getElementById("textoInfNo");
-const textoInfP = document.getElementById("textoInfP");
-
 textoInf.addEventListener("keyup", () => {
   textoInfP.textContent = textoInf.value;
 });
@@ -208,17 +254,6 @@ textoInfNo.addEventListener("click", () => {
 });
 
 //cambiar fuente o tipo de letra
-const tipoFuente = document.getElementById("tipoFuente");
-const arial = document.getElementById("arial");
-const arialBlack = document.getElementById("arialBlack");
-const americanTypewriter = document.getElementById("americanTypewriter");
-const andaleMono = document.getElementById("andaleMono");
-const comicSansMs = document.getElementById("comicSansMs");
-const helvetica = document.getElementById("helvetica");
-const impact = document.getElementById("impact");
-const verdana = document.getElementById("verdana");
-const timesNewRoman = document.getElementById("timesNewRoman");
-
 tipoFuente.addEventListener("change", () => {
   cambiarFuentes(tipoFuente);
 });
@@ -262,20 +297,12 @@ const cambiarFuentes = (tipoFuente) => {
 };
 
 //tamaño fuente
-
-const tamanoFuente = document.getElementById("tamanoFuente");
-
 tamanoFuente.addEventListener("change", () => {
   textoSupP.style.fontSize = tamanoFuente.value + "px";
   textoInfP.style.fontSize = tamanoFuente.value + "px";
 });
 
 //alineación de texto
-
-const alinearIzq = document.getElementById("alineadoIzq");
-const alinearCentro = document.getElementById("alineadoCentro");
-const alinearDer = document.getElementById("alineadoDer");
-
 alinearIzq.addEventListener("click", () => {
   textoSupP.style.textAlign = "left";
   textoInfP.style.textAlign = "left";
@@ -290,23 +317,17 @@ alinearDer.addEventListener("click", () => {
 });
 
 // Color Fuente
-const colorFuente = document.getElementById("colorFuente");
-
 colorFuente.addEventListener("change", () => {
   textoSupP.style.color = colorFuente.value;
   textoInfP.style.color = colorFuente.value;
 });
 
 // color de fondo de fuente
-const colorFondoP = document.getElementById("colorFondoP");
-
 colorFondoP.addEventListener("change", () => {
   containerImg.style.backgroundColor = colorFondoP.value;
 });
 
 //fondo transparnte
-const fondoTransparente = document.getElementById("fondoTransparente");
-
 fondoTransparente.addEventListener("click", () => {
   if (fondoTransparente.checked) {
     containerImg.style.backgroundColor = "transparent";
@@ -316,10 +337,6 @@ fondoTransparente.addEventListener("click", () => {
 });
 
 //contorno texto
-const botonSinContorno = document.getElementById("sinContorno");
-const botonContornoClaro = document.getElementById("contornoClaro");
-const botonContornoOscuro = document.getElementById("contornoOscuro");
-
 botonSinContorno.addEventListener("click", () => {
   textoSupP.style.textShadow = "none";
   textoInfP.style.textShadow = "none";
@@ -334,25 +351,15 @@ botonContornoOscuro.addEventListener("click", () => {
 });
 
 //espaciado de texto
-const espaciado = document.getElementById("espaciado");
 espaciado.addEventListener("change", () => {
   textoSupP.style.letterSpacing = espaciado.value + "px";
   textoInfP.style.letterSpacing = espaciado.value + "px";
 });
 
 //interlineado
-const interlineado = document.getElementById("interlineado");
-const ceroOcho = document.getElementById("ceroOcho");
-const uno = document.getElementById("uno");
-const unoDos = document.getElementById("unoDos");
-const unoCinco = document.getElementById("unoCinco");
-const dos = document.getElementById("dos");
-const dosCinco = document.getElementById("dosCinco");
-
 interlineado.addEventListener("change", () => {
   nuevoInterlineado(interlineado);
 });
-
 const nuevoInterlineado = (interlineado) => {
   if (interlineado.value === "ceroOcho") {
     textoSupP.style.lineHeight = "0.8";
@@ -370,11 +377,9 @@ const nuevoInterlineado = (interlineado) => {
     textoSupP.style.lineHeight = "1.5";
     textoInfP.style.lineHeight = "";
 }
-
 };
 
-const botonDescarga = document.getElementById("botonDescarga");
-
+//boton descarga meme
 botonDescarga.addEventListener("click", () => {
   new Promise((resolve, reject) => {
     html2canvas(document.getElementById("containerImg"), {
