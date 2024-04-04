@@ -2,15 +2,34 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="keywords" content="memes, generador de memes, generador, texto, imagen, editor" />
-  <meta name="description"
-    content="Sitio para crear memes personalizados de forma sencilla y rápida, utilizando tus imágenes " />
-  <meta name="author" content="Daniela Sánchez" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="memes, generador de memes, generador, texto, imagen, editor">
+
+  <meta name="author" content="Daniela Sánchez">
   <link rel="shortcut icon" href="./assets/img/reir.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>Editor de memes</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Primary Meta Tags -->
+<title>Editor de memes</title>
+<meta name="title" content="Editor de memes">
+<meta name="description" content="Sitio para crear memes personalizados de forma sencilla y rápida, utilizando tus imágenes">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tp-meme-daniela140285s-projects.vercel.app/">
+<meta property="og:title" content="Editor de memes">
+<meta property="og:description" content="Sitio para crear memes personalizados de forma sencilla y rápida, utilizando tus imágenes">
+<meta property="og:image" content="https://metatags.io/images/meta-tags.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://tp-meme-daniela140285s-projects.vercel.app/">
+<meta property="twitter:title" content="Editor de memes">
+<meta property="twitter:description" content="Sitio para crear memes personalizados de forma sencilla y rápida, utilizando tus imágenes">
+<meta property="twitter:image" content="https://metatags.io/images/meta-tags.png">
+
+<!-- Meta Tags Generated with https://metatags.io -->
 </head>
 
 <body>
@@ -40,9 +59,9 @@
   <main>
     <section class="container-main">
       <div class="container-image" id="containerImg">
-        <p class="text-image" id="textoSupP">Texto superior</p>
+        <p  id="textoSupP">Texto superior</p>
         <div class="meme-image" id="memeImage" aria-label="Imagen de meme"></div>
-        <p class="text-image" id="textoInfP">Texto inferior</p>
+        <p  id="textoInfP">Texto inferior</p>
       </div>
       <button class="botonDescarga" aria-label="Descargar meme" id="botonDescarga">
         <i class="fa-solid fa-download" aria-hidden="true"></i>&nbsp;
@@ -57,21 +76,21 @@
             </button> -->
     <aside class="asideImage" id="asideImagen">
       <h2>Imagen</h2>
-      <div class="panel-editor">
+      <div >
         <!-- URL DE LA IMAGEN -->
         <div class="input-image">
-          <label for="url" class="title_url">URL</label>
-          <input type="text" id="url" placeholder="URL" aria-label="Direccion URL de la imagen" />
+          <label for="url">URL</label>
+          <input type="text" id="url" placeholder="URL" aria-label="Direccion URL de la imagen">
         </div>
         <!-- FONDO DE LA IMAGEN -->
         <section class="panel-control">
           <h3>fondo</h3>
-          <div class="panel-control-rows">
-            <div class="panel-back-color panel-color-rows">
-              <input type="color" id="colorFondo" aria-label="Color de fondo de imagen" />
-              <span id="blend-back-color" aria-hidden="true">#FFFFF</span>
+          <div>
+            <div >
+              <input type="color" id="colorFondo" aria-label="Color de fondo de imagen">
+              <span  aria-hidden="true">#FFFFF</span>
             </div>
-            <div class="panel-control-rows">
+            <div>
               <select class="panel-control-input" id="selectColorFondo"
                 aria-label="Mezcla del color de fondo de la imagen">
                 <option value="ninguno" id="ninguno">Ninguno</option>
@@ -91,40 +110,40 @@
         <!-- FILTROS DE LA IMAGEN -->
         <section class="">
           <h3>Filtros</h3>
-          <div class="filters-container">
+          <div >
             <label class="title-filters" for="brillo">Brillo</label>
             <input type="range" id="brillo" min="0" max="1" step="0.1" value="1" aria-label="brillo">
           </div>
-          <div class="filters-container">
-            <label class="title-filters" for="opacidad">Opacidad</label>
+          <div >
+            <label  for="opacidad">Opacidad</label>
             <input type="range" id="opacidad" min="0" max="1" step="0.1" value="1" aria-label="opacidad">
           </div>
-          <div class="filters-container">
-            <label class="title-filters" for="contraste">Contraste</label>
+          <div >
+            <label  for="contraste">Contraste</label>
             <input type="range" id="contraste" min="100" max="1000" step="1" value="100" aria-label="contraste">
           </div>
-          <div class="filters-container">
-            <label class="title-filters" for="desenfoque">Desenfoque</label>
+          <div >
+            <label for="desenfoque">Desenfoque</label>
             <input type="range" id="desenfoque" min="0" max="10" step="0.1" value="0" aria-label="desenfoque">
           </div>
-          <div class="filters-container">
-            <label class="title-filters" for="grises">Escala de grises</label>
+          <div >
+            <label for="grises">Escala de grises</label>
             <input type="range" id="grises" min="0" max="100" step="1" value="0" aria-label="Escala de grises">
           </div>
-          <div class="filters-container">
-            <label class="title-filters" for="sepia">Sepia</label>
+          <div >
+            <label for="sepia">Sepia</label>
             <input type="range" id="sepia" min="0" max="100" step="1" value="0" aria-label="sepia">
           </div>
-          <div class="filters-container">
-            <label class="title-filters" for="hue">Hue</label>
+          <div >
+            <label for="hue">Hue</label>
             <input type="range" id="hue" min="0" max="359" step="1" value="0" aria-label="hue">
           </div>
-          <div class="filters-container">
-            <label class="title-filters" for="saturado">Saturado</label>
+          <div >
+            <label for="saturado">Saturado</label>
             <input type="range" id="saturado" min="100" max="1000" step="10" value="100" aria-label="saturado">
           </div>
-          <div class="filters-container">
-            <label class="title-filters" for="negativo">Negativo</label>
+          <div >
+            <label for="negativo">Negativo</label>
             <input type="range" id="negativo" min="0" max="1" step="0.1" value="0" aria-label="negativo">
           </div>
         </section>
@@ -143,27 +162,27 @@
       <h2>Texto</h2>
       <div class="aside-section">
         <!-- TEXTO SUPERIOR -->
-        <div class="aside-inputs">
-          <label class="title-inputs" for="textoSup"> Superior</label>
-          <textarea type="text" id="textoSup" maxlength="50" style="resize: none;"
+        <div>
+          <label for="textoSup"> Superior</label>
+          <textarea id="textoSup" maxlength="50" style="resize: none;"
             placeholder="Escribe el texto superior" aria-label="Escribe el texto superior del meme"></textarea>
-          <div class="">
+          <div>
             <input type="checkbox" id="textoSupNo">
-            <label class="checkbox-label" for="textoSupNo">Sin texto superior</label>
+            <label for="textoSupNo">Sin texto superior</label>
           </div>
         </div>
         <!-- TEXTO INFERIOR -->
-        <div class="aside-inputs">
-          <label class="title-inputs" for="bottom-text">Inferior</label>
-          <textarea type="text" id="textoInf" maxlength="50" style="resize: none;"
+        <div>
+          <label class="title-inputs" for="textoInf">Inferior</label>
+          <textarea id="textoInf" maxlength="50" style="resize: none;"
             placeholder="Escribe el texto inferior" aria-label="Escribe el texto inferior del meme"></textarea>
-          <div class="aside-chekbox image-background-color">
-            <input type="checkbox" id="textoInfNo" />
+          <div>
+            <input type="checkbox" id="textoInfNo">
             <label for="textoInfNo">Sin texto inferior</label>
           </div>
         </div>
         <!-- TIPO DE LETRA -->
-        <div class="aside-inputs">
+        <div>
           <label class="title-inputs" for="tipoFuente">Fuente</label>
           <select id="tipoFuente" aria-label="Selecciona el tipo de fuente">
             <option id="arial" value="arial">Arial</option>
@@ -178,58 +197,58 @@
           </select>
 
           <!-- TAMAÑO DE LETRA -->
-          <div class="panel-control-rows font-buttons" id="font-buttons-text">
-            <input type="number" id="tamanoFuente" min="12" max="80" value="40" aria-label="Tamaño de fuente" />
+          <div >
+            <input type="number" id="tamanoFuente" min="12" max="80" value="40" aria-label="Tamaño de fuente">
 
             <!-- ALINEACIÓN  LETRA-->
-            <button id="alineadoIzq" class="align-button" aria-label="Justificar texto a la izquierda">
+            <button id="alineadoIzq" aria-label="Justificar texto a la izquierda">
               <i class="fa-solid fa-align-left button-icon-text" id="alineadoIzq" aria-hidden="true"></i>
             </button>
-            <button id="alineadoCentro" class="align-button" aria-label="Justificar texto en el centro">
-              <i class="fa-solid fa-align-center button-icon-text"id="alineadoCentro" aria-hidden="true"></i>
+            <button id="alineadoCentro" aria-label="Justificar texto en el centro">
+              <i class="fa-solid fa-align-center button-icon-text" id="alineadoCentro" aria-hidden="true"></i>
             </button>
-            <button id="alineadoDer" class="align-button" aria-label="Justificar texto a la derecha">
+            <button id="alineadoDer"  aria-label="Justificar texto a la derecha">
               <i class="fas fa-align-right button-icon-text" id="alineadoDer" aria-hidden="true"></i>
             </button>
           </div>
         </div>
 
         <!-- EDICIÓN COLOR -->
-        <div class="aside-inputs">
-          <div class="panel-control-rows">
-            <div class="editor-color">
-              <label class="title-inputs" for="font-color">Color</label>
-              <div class="aside-inputs-row color-inputs">
-                <input type="color" id="colorFuente" value="#000000" aria-label="Selecciona color texto" />
-                <span id="font-color-text" aria-hidden="true">#000000</span>
+        <div>
+          <div>
+            <div >
+              <label for="colorFuente">Color</label>
+              <div>
+                <input type="color" id="colorFuente" value="#000000" aria-label="Selecciona color texto">
+                <span aria-hidden="true">#000000</span>
               </div>
             </div>
             <!-- COLOR FONDO TEXTO -->
-            <div class="editor-color">
-              <label class="title-inputs" for="font-back">Fondo</label>
-              <div class="aside-inputs-row color-inputs">
-                <input type="color" id="colorFondoP" value="#ffffff" aria-label="Selecciona color de fondo del texto" />
-                <span id="font-back-text" aria-hidden="true">#FFFFFF</span>
+            <div >
+              <label for="colorFondoP">Fondo</label>
+              <div>
+                <input type="color" id="colorFondoP" value="#ffffff" aria-label="Selecciona color de fondo del texto">
+                <span aria-hidden="true">#FFFFFF</span>
               </div>
             </div>
           </div>
-          <div class="aside-chekbox image-background-color">
-            <input type="checkbox" id="fondoTransparente" />
-            <label class="checkbox-label" for="fondoTransparente">Fondo transparente</label>
+          <div>
+            <input type="checkbox" id="fondoTransparente">
+            <label for="fondoTransparente">Fondo transparente</label>
           </div>
         </div>
 
         <!-- CONTORNO DEL TEXTO -->
-        <div class="aside-inputs" id="outline-buttons">
-          <label class="title-inputs">Contorno</label>
-          <div class="aside-inputs-buttons">
-            <button id="sinContorno" class="button-outline" aria-label="Sin contorno de texto">
+        <div>
+          <label>Contorno</label>
+          <div>
+            <button id="sinContorno" aria-label="Sin contorno de texto">
               Ninguno
             </button>
-            <button id="contornoClaro" class="button-outline" aria-label="Contorno de texto claro">
+            <button id="contornoClaro" aria-label="Contorno de texto claro">
               Claro
             </button>
-            <button id="contornoOscuro" class="button-outline" aria-label="Contorno de texto oscuro">
+            <button id="contornoOscuro" aria-label="Contorno de texto oscuro">
               Oscuro
             </button>
           </div>
@@ -237,14 +256,14 @@
 
         <!-- ESPACIADO -->
         <div class="aside-input">
-          <label class="title-inputs" for="font-spacing">Espaciado</label>
-          <input type="number" id="espaciado" min="10" max="50" value="35" aria-label="espaciado" />
+          <label for="espaciado">Espaciado</label>
+          <input type="number" id="espaciado" min="10" max="50" value="35" aria-label="espaciado">
         </div>
 
         <!-- INTERLINEADO -->
         <div class="aside-input">
-          <label class="title-inputs" for="line-height">Interlineado</label>
-          <select class="line-height" id="interlineado" aria-label="Interlineado" value="1.2">
+          <label class="title-inputs" for="interlineado">Interlineado</label>
+          <select id="interlineado" aria-label="Interlineado" value="1.2">
             <option id="ceroOcho" value="0.8">0.8</option>
             <option id="uno" value="1">1</option>
             <option id="unoDos" value="1.2">1.2</option>
