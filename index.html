@@ -2,38 +2,46 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="memes, generador de memes, generador, texto, imagen, editor">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="memes, generador de memes, generador, texto, imagen, editor" />
 
-  <meta name="author" content="Daniela Sánchez">
-  <link rel="shortcut icon" href="./assets/img/reir.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  
+  <meta name="author" content="Daniela Sánchez" />
+  <link rel="shortcut icon" href="./assets/img/reir.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
   <!-- Primary Meta Tags -->
-<title>Editor de memes</title>
-<meta name="title" content="Editor de memes">
-<meta name="description" content="Sitio para crear memes personalizados de forma sencilla y rápida, utilizando tus imágenes">
+  <title>Editor de memes</title>
+  <meta name="title" content="Editor de memes" />
+  <meta name="description"
+    content="Sitio para crear memes personalizados de forma sencilla y rápida, utilizando tus imágenes" />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://tp-meme-daniela140285s-projects.vercel.app/">
-<meta property="og:title" content="Editor de memes">
-<meta property="og:description" content="Sitio para crear memes personalizados de forma sencilla y rápida, utilizando tus imágenes">
-<meta property="og:image" content="https://metatags.io/images/meta-tags.png">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tp-meme-daniela140285s-projects.vercel.app/" />
+  <meta property="og:title" content="Editor de memes" />
+  <meta property="og:description"
+    content="Sitio para crear memes personalizados de forma sencilla y rápida, utilizando tus imágenes" />
+  <meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://tp-meme-daniela140285s-projects.vercel.app/">
-<meta property="twitter:title" content="Editor de memes">
-<meta property="twitter:description" content="Sitio para crear memes personalizados de forma sencilla y rápida, utilizando tus imágenes">
-<meta property="twitter:image" content="https://metatags.io/images/meta-tags.png">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://tp-meme-daniela140285s-projects.vercel.app/" />
+  <meta property="twitter:title" content="Editor de memes" />
+  <meta property="twitter:description"
+    content="Sitio para crear memes personalizados de forma sencilla y rápida, utilizando tus imágenes" />
+  <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
 
-<!-- Meta Tags Generated with https://metatags.io -->
+  <!-- Meta Tags Generated with https://metatags.io -->
 </head>
 
 <body>
   <header id="miHeader">
+    <div id="asideBotonContainer">
+      <button class="asideBoton" id="asideBoton" aria-label="cerrar panel lateral">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
     <h1>Generador de Memes</h1>
     <nav>
       <ul>
@@ -57,11 +65,11 @@
     </nav>
   </header>
   <main>
-    <section class="container-main">
+    <section>
       <div class="container-image" id="containerImg">
-        <p  id="textoSupP">Texto superior</p>
+        <p id="textoSupP" class="text-image">Texto superior</p>
         <div class="meme-image" id="memeImage" aria-label="Imagen de meme"></div>
-        <p  id="textoInfP">Texto inferior</p>
+        <p id="textoInfP" class="text-image">Texto inferior</p>
       </div>
       <button class="botonDescarga" aria-label="Descargar meme" id="botonDescarga">
         <i class="fa-solid fa-download" aria-hidden="true"></i>&nbsp;
@@ -71,24 +79,21 @@
 
     <!-- SECCION EDITOR IMAGEN -->
 
-    <!-- <button class="aside-button" id="aside-button" aria-label="cerrar panel lateral">
-                <i class="fas fa-times" aria-hidden="true"></i>
-            </button> -->
     <aside class="asideImage" id="asideImagen">
       <h2>Imagen</h2>
-      <div >
+      <div>
         <!-- URL DE LA IMAGEN -->
         <div class="input-image">
           <label for="url">URL</label>
-          <input type="text" id="url" placeholder="URL" aria-label="Direccion URL de la imagen">
+          <input type="text" id="url" placeholder="URL" aria-label="Direccion URL de la imagen" />
         </div>
         <!-- FONDO DE LA IMAGEN -->
         <section class="panel-control">
           <h3>fondo</h3>
           <div>
-            <div >
-              <input type="color" id="colorFondo" aria-label="Color de fondo de imagen">
-              <span  aria-hidden="true">#FFFFF</span>
+            <div>
+              <input type="color" id="colorFondo" aria-label="Color de fondo de imagen" />
+              <span aria-hidden="true">#FFFFF</span>
             </div>
             <div>
               <select class="panel-control-input" id="selectColorFondo"
@@ -110,41 +115,41 @@
         <!-- FILTROS DE LA IMAGEN -->
         <section class="">
           <h3>Filtros</h3>
-          <div >
+          <div>
             <label class="title-filters" for="brillo">Brillo</label>
-            <input type="range" id="brillo" min="0" max="1" step="0.1" value="1" aria-label="brillo">
+            <input type="range" id="brillo" min="0" max="1" step="0.1" value="1" aria-label="brillo" />
           </div>
-          <div >
-            <label  for="opacidad">Opacidad</label>
-            <input type="range" id="opacidad" min="0" max="1" step="0.1" value="1" aria-label="opacidad">
+          <div>
+            <label for="opacidad">Opacidad</label>
+            <input type="range" id="opacidad" min="0" max="1" step="0.1" value="1" aria-label="opacidad" />
           </div>
-          <div >
-            <label  for="contraste">Contraste</label>
-            <input type="range" id="contraste" min="100" max="1000" step="1" value="100" aria-label="contraste">
+          <div>
+            <label for="contraste">Contraste</label>
+            <input type="range" id="contraste" min="100" max="1000" step="1" value="100" aria-label="contraste" />
           </div>
-          <div >
+          <div>
             <label for="desenfoque">Desenfoque</label>
-            <input type="range" id="desenfoque" min="0" max="10" step="0.1" value="0" aria-label="desenfoque">
+            <input type="range" id="desenfoque" min="0" max="10" step="0.1" value="0" aria-label="desenfoque" />
           </div>
-          <div >
+          <div>
             <label for="grises">Escala de grises</label>
-            <input type="range" id="grises" min="0" max="100" step="1" value="0" aria-label="Escala de grises">
+            <input type="range" id="grises" min="0" max="100" step="1" value="0" aria-label="Escala de grises" />
           </div>
-          <div >
+          <div>
             <label for="sepia">Sepia</label>
-            <input type="range" id="sepia" min="0" max="100" step="1" value="0" aria-label="sepia">
+            <input type="range" id="sepia" min="0" max="100" step="1" value="0" aria-label="sepia" />
           </div>
-          <div >
+          <div>
             <label for="hue">Hue</label>
-            <input type="range" id="hue" min="0" max="359" step="1" value="0" aria-label="hue">
+            <input type="range" id="hue" min="0" max="359" step="1" value="0" aria-label="hue" />
           </div>
-          <div >
+          <div>
             <label for="saturado">Saturado</label>
-            <input type="range" id="saturado" min="100" max="1000" step="10" value="100" aria-label="saturado">
+            <input type="range" id="saturado" min="100" max="1000" step="10" value="100" aria-label="saturado" />
           </div>
-          <div >
+          <div>
             <label for="negativo">Negativo</label>
-            <input type="range" id="negativo" min="0" max="1" step="0.1" value="0" aria-label="negativo">
+            <input type="range" id="negativo" min="0" max="1" step="0.1" value="0" aria-label="negativo" />
           </div>
         </section>
       </div>
@@ -164,20 +169,20 @@
         <!-- TEXTO SUPERIOR -->
         <div>
           <label for="textoSup"> Superior</label>
-          <textarea id="textoSup" maxlength="50" style="resize: none;"
-            placeholder="Escribe el texto superior" aria-label="Escribe el texto superior del meme"></textarea>
+          <textarea id="textoSup" maxlength="50" style="resize: none" placeholder="Escribe el texto superior"
+            aria-label="Escribe el texto superior del meme"></textarea>
           <div>
-            <input type="checkbox" id="textoSupNo">
+            <input type="checkbox" id="textoSupNo" />
             <label for="textoSupNo">Sin texto superior</label>
           </div>
         </div>
         <!-- TEXTO INFERIOR -->
         <div>
           <label class="title-inputs" for="textoInf">Inferior</label>
-          <textarea id="textoInf" maxlength="50" style="resize: none;"
-            placeholder="Escribe el texto inferior" aria-label="Escribe el texto inferior del meme"></textarea>
+          <textarea id="textoInf" maxlength="50" style="resize: none" placeholder="Escribe el texto inferior"
+            aria-label="Escribe el texto inferior del meme"></textarea>
           <div>
-            <input type="checkbox" id="textoInfNo">
+            <input type="checkbox" id="textoInfNo" />
             <label for="textoInfNo">Sin texto inferior</label>
           </div>
         </div>
@@ -187,18 +192,24 @@
           <select id="tipoFuente" aria-label="Selecciona el tipo de fuente">
             <option id="arial" value="arial">Arial</option>
             <option id="arialBlack" value="arialBlack">Arial Black</option>
-            <option id="americanTypewriter" value="americanTypewriter">American Typewriter</option>
+            <option id="americanTypewriter" value="americanTypewriter">
+              American Typewriter
+            </option>
             <option id="andaleMono" value="andaleMono">Andale Mono</option>
-            <option id="comicSansMs" value="comicSansMs">Comic Sans MS</option>
+            <option id="comicSansMs" value="comicSansMs">
+              Comic Sans MS
+            </option>
             <option id="helvetica" value="helvetica">Helvetica</option>
             <option id="impact" value="impact">Impact</option>
             <option id="verdana" value="verdana">Verdana</option>
-            <option id="timesnewroman" value="timesNewRoman">Times New Roman</option>
+            <option id="timesnewroman" value="timesNewRoman">
+              Times New Roman
+            </option>
           </select>
 
           <!-- TAMAÑO DE LETRA -->
-          <div >
-            <input type="number" id="tamanoFuente" min="12" max="80" value="40" aria-label="Tamaño de fuente">
+          <div>
+            <input type="number" id="tamanoFuente" min="12" max="80" value="40" aria-label="Tamaño de fuente" />
 
             <!-- ALINEACIÓN  LETRA-->
             <button id="alineadoIzq" aria-label="Justificar texto a la izquierda">
@@ -207,7 +218,7 @@
             <button id="alineadoCentro" aria-label="Justificar texto en el centro">
               <i class="fa-solid fa-align-center button-icon-text" id="alineadoCentro" aria-hidden="true"></i>
             </button>
-            <button id="alineadoDer"  aria-label="Justificar texto a la derecha">
+            <button id="alineadoDer" aria-label="Justificar texto a la derecha">
               <i class="fas fa-align-right button-icon-text" id="alineadoDer" aria-hidden="true"></i>
             </button>
           </div>
@@ -216,24 +227,25 @@
         <!-- EDICIÓN COLOR -->
         <div>
           <div>
-            <div >
+            <div>
               <label for="colorFuente">Color</label>
               <div>
-                <input type="color" id="colorFuente" value="#000000" aria-label="Selecciona color texto">
+                <input type="color" id="colorFuente" value="#000000" aria-label="Selecciona color texto" />
                 <span aria-hidden="true">#000000</span>
               </div>
             </div>
             <!-- COLOR FONDO TEXTO -->
-            <div >
+            <div>
               <label for="colorFondoP">Fondo</label>
               <div>
-                <input type="color" id="colorFondoP" value="#ffffff" aria-label="Selecciona color de fondo del texto">
+                <input class="colorFondoP" type="color" id="colorFondoP" value="#ffffff"
+                  aria-label="Selecciona color de fondo del texto" />
                 <span aria-hidden="true">#FFFFFF</span>
               </div>
             </div>
           </div>
           <div>
-            <input type="checkbox" id="fondoTransparente">
+            <input type="checkbox" id="fondoTransparente" />
             <label for="fondoTransparente">Fondo transparente</label>
           </div>
         </div>
@@ -257,7 +269,7 @@
         <!-- ESPACIADO -->
         <div class="aside-input">
           <label for="espaciado">Espaciado</label>
-          <input type="number" id="espaciado" min="10" max="50" value="35" aria-label="espaciado">
+          <input type="number" id="espaciado" min="10" max="50" value="35" aria-label="espaciado" />
         </div>
 
         <!-- INTERLINEADO -->
@@ -280,7 +292,7 @@
   </footer>
 
   <!-- para descargar meme -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
 
   <script src="meme.js"></script>
 

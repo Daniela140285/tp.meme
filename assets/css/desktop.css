@@ -1,6 +1,6 @@
 
 body{    
-    background-color: #30343f;
+    background-color: var(--bgc-body);
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,8 @@ header{
     align-items: center;
     justify-content: center;
     height: 25dvh;
-    background-color: #191e2b;
+    width: 80dvw;
+    background-color: var(--bgc-header);
 }
 h1{
     color: #632ce1;
@@ -24,7 +25,6 @@ ul{
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap;
     padding: 0;
 }
 button{
@@ -36,17 +36,15 @@ button{
 }
 main{
     display: flex;
-    align-items: center;
-    justify-content: end;
-    position: relative;
+    align-content: center;
+    justify-content: center;
 }
-.container-main{
+section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    position:absolute;
-    right: 35%;
-    top: 50%;
+    margin: 20px 250px 0 0;
+    width: 90%;
 }
 .container-image{    
     width: 25rem;
@@ -73,33 +71,36 @@ p{
     color: black;
 }
 .botonDescarga{
-    transform: translateY(45px);
     background-color: #2e7d32;
     color: #fff;
     padding: 10px;  
-    width: 40%;  
+    width: 20%;  
+    margin-top: 10px;
 }
 .asideTexto, .asideImage {
     background-color: #252935;
-    height: 100dvh;
     width: 18dvw;
     position: absolute;
-    top: -155px;
-    display: flex;
-    flex-direction: column;
+    top: 0;
+    right: 0;
     padding: 5px;
 }
-.asideTexto{
+#asideBotonContainer{
     display: none;
 }
-input{
-    background-color: #e0e0e0;
+h2{
+    text-align: center;
+}
+input, textarea, select{
     padding: 5px;
+    width: 90%;
+    margin: 3px 0;
 }
 .botonRestablecerFiltros{
     margin: 10px;
 }
 .firma{
-    transform: translate(600px, 2700%);
+    text-align: center;
+    margin-top: 300px;
 }
 

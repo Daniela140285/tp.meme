@@ -1,5 +1,4 @@
 //declaración de variables de header
-
 //capturo botones texto, imagen
 const botonImagen = document.getElementById("botonImagen");
 const botonTexto = document.getElementById("botonTexto");
@@ -32,7 +31,9 @@ let hue = document.getElementById("hue");
 let saturado = document.getElementById("saturado");
 let negativo = document.getElementById("negativo");
 
-const botonRestablecerFiltros = document.getElementById("botonRestablecerFiltros");
+const botonRestablecerFiltros = document.getElementById(
+  "botonRestablecerFiltros"
+);
 
 //declaraciones aside-texto
 const asideTexto = document.getElementById("asideTexto");
@@ -84,7 +85,6 @@ const dosCinco = document.getElementById("dosCinco");
 
 // descarga meme
 const botonDescarga = document.getElementById("botonDescarga");
-
 
 //evento boton imagen
 botonImagen.addEventListener("click", () => {
@@ -167,7 +167,6 @@ const mezclarImgFondo = (selectColorFondo) => {
 };
 
 //filtros de imagen
-
 brillo.addEventListener("change", filtrosImg);
 opacidad.addEventListener("change", filtrosImg);
 contraste.addEventListener("change", filtrosImg);
@@ -346,8 +345,8 @@ botonContornoClaro.addEventListener("click", () => {
   textoInfP.style.textShadow = "1px 1px 2px rgba(0,0,0,0.5)";
 });
 botonContornoOscuro.addEventListener("click", () => {
-  textoSupP.style.textShadow = "1px 1px 2px rgba(0,0,0,1)";
-  textoInfP.style.textShadow = "1px 1px 2px rgba(0,0,0,1)";
+  textoSupP.style.textShadow = "1px 2px 2.5x rgba(0,0,0,1)";
+  textoInfP.style.textShadow = "1px 2px 2.5px rgba(0,0,0,1)";
 });
 
 //espaciado de texto
@@ -373,13 +372,21 @@ const nuevoInterlineado = (interlineado) => {
     textoSupP.style.lineHeight = "1.2";
     textoInfP.style.lineHeight = "1.2";
   }
-  if (interlineado.value === "unoCinco"){
+  if (interlineado.value === "unoCinco") {
     textoSupP.style.lineHeight = "1.5";
-    textoInfP.style.lineHeight = "";
-}
+    textoInfP.style.lineHeight = "1.5";
+  }
+  if (interlineado.value === "dos") {
+    textoSupP.style.lineHeight = "2";
+    textoInfP.style.lineHeight = "2";
+  }
+  if (interlineado.value === "dosCinco") {
+    textoSupP.style.lineHeight = "2.5";
+    textoInfP.style.lineHeight = "2.5";
+  }
 };
 
-//boton descarga meme
+//boton DESCARGA meme
 botonDescarga.addEventListener("click", () => {
   new Promise((resolve, reject) => {
     html2canvas(document.getElementById("containerImg"), {
@@ -395,5 +402,38 @@ botonDescarga.addEventListener("click", () => {
     a.download = "captured.png";
     a.href = canvas.toDataURL("image/png");
     a.click();
+  });
+});
+
+// Mobile
+document.addEventListener('DOMContentLoaded', function () {
+  const asideBoton = document.getElementById('asideBoton');
+
+  // Función para abrir un aside y mostrar su boton de cerrar
+  function abrirPanel(aside) {
+    aside.style.display = 'block';
+    asideBoton.style.display = 'block';
+  }
+
+  // Función para cerrar un aside y ocultar su boton de cerrar
+  function cerrarPanel(aside) {
+    aside.style.display = 'none';
+    asideBoton.style.display = 'none';
+  }
+
+  // Evento al hacer click en el boton de imagen
+  botonImagen.addEventListener('click', function () {
+      abrirPanel(asideImagen);
+  });
+
+  // Evento al hacer click en el boton de texto
+  botonTexto.addEventListener('click', function () {
+      abrirPanel(asideTexto);
+  });
+
+  // Evento al hacer click en el boton de cerrar
+  asideBoton.addEventListener('click', function () {
+      cerrarPanel(asideImagen);
+      cerrarPanel(asideTexto);
   });
 });
